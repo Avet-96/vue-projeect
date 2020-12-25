@@ -1,20 +1,51 @@
 <template>
-  <section class="cta-section theme-bg-light py-5">
+  <section class="cta-section theme-bg-light  py-5">
     <div class="container">
       <h2 class="heading">New Post</h2>
-      <form class="signup-form form-inline">
-        <div class="form-group">
-          <textarea type="text" id="semail" name="semail1" class="form-control mr-md-1" placeholder="Enter Post"/>
-        </div>
+      <form class="signup-form form-inline d-flex flex-column align-items-start" @submit.prevent="handleSubmit">
+        <input type="text"
+               name="title"
+               v-model='title'
+               class="border-0 mb-3 form-control"
+               placeholder="Post title"/>
+
+        <textarea type="text"
+                  id="semail"
+                  name="semail1"
+                  class="form-control  border-0 mb-3"
+                  placeholder="Post description"
+                  v-model="description"
+        />
+
         <button type="submit" class="btn btn-primary">Create</button>
       </form>
     </div><!--//container-->
+
   </section>
+
 </template>
 
 <script>
 export default {
-  name: "CreateNewPost"
+  name: "CreateNewPost",
+  data: () => ({
+    title: '',
+    description: ''
+  }),
+  methods: {
+    async handleSubmit() {
+      try {
+        if (this.title !== '' && this.description !== '') {
+          let data = {title: this.title, description: this.description}
+          await this.$store.dispatch('createPost', data)
+          this.title = ''
+          this.description = ''
+        }
+
+      } catch (e) {
+      }
+    }
+  }
 }
 </script>
 
