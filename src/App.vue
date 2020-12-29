@@ -29,7 +29,7 @@ export default {
     // }
 
     // console.log(link === '/login')
-    
+
     if (!localStorage.getItem('token')) {
       await this.$router.push('/login')
     } else {
