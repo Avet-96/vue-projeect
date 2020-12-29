@@ -71,7 +71,14 @@ export default {
   methods: {
     handleClick(e) {
       let link = e.target.href.split('/')
-      this.menuList.filter(v => v.to === `/${link[link.length - 1]}` ? v.active = true : v.active = false)
+      let token = localStorage.getItem('token')
+
+      if (token === this.$store.getters.useData.user.token) {
+        this.menuList.filter(v => v.to === `/${link[link.length - 1]}` ? v.active = true : v.active = false)
+      } else {
+        alert('Pleas login ead')
+        this.$router.push('/login')
+      }
     },
     async handleClickBack() {
       try {
@@ -86,7 +93,7 @@ export default {
   },
   async mounted() {
     await this.$store.dispatch('getUserData')
-     this.uData = this.$store.state.auth.data.user
+    this.uData = this.$store.state.auth.data.user
 
   }
 }

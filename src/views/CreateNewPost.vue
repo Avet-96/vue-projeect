@@ -37,14 +37,21 @@ export default {
   methods: {
     async handleSubmit() {
       try {
-        if (this.title !== '' && this.description !== ''){
-          let data = {title: this.title, description: this.description}
-          await this.$store.dispatch('createPost', data)
-          this.title = ''
-          this.description = ''
-          this.updateData()
+        let token = localStorage.getItem('token')
+        if (token === this.$store.getters.useData.user.token) {
+          if (this.title !== '' && this.description !== '') {
+            let data = {title: this.title, description: this.description}
+            await this.$store.dispatch('createPost', data)
+            this.title = ''
+            this.description = ''
+            this.updateData()
+          }
+        } else {
+          alert('Pleas login ead')
+          await this.$router.push('/login')
         }
-      }catch (e) {}
+      } catch (e) {
+      }
     }
   }
 }

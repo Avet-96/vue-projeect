@@ -52,6 +52,15 @@ export default {
           email: this.email,
         }
         await this.$store.dispatch('userRegistration', data)
+        if (this.$store.getters.registrationStatus === 'OK') {
+          await this.$router.push('/login')
+          this.name = ''
+          this.last_name = ''
+          this.birth_date = ''
+          this.password = ''
+          this.confirmed_password = ''
+          this.email = ''
+        }
       } catch (e) {
       }
     }

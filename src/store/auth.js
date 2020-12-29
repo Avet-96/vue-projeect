@@ -5,7 +5,8 @@ export default {
         async userRegistration({dispatch, commit}, {name, last_name, birth_date, password, confirmed_password, email}) {
             try {
                 let data = {name, last_name, birth_date, password, confirmed_password, email}
-                await RegistrationFetch.userSingUp({...data})
+                let regStat = await RegistrationFetch.userSingUp({...data})
+                commit('registrationStatus', regStat.statusText)
             } catch (e) {
                 throw e
             }
@@ -43,7 +44,8 @@ export default {
         }
     },
     state: {
-        data: []
+        data: [],
+        status: ''
     },
     mutations: {
         userData(state, data) {
@@ -51,11 +53,18 @@ export default {
         },
         clearData(state) {
             state.data = []
+        },
+
+        registrationStatus(state, status) {
+            state.status = status
         }
     },
     getters: {
         useData(state) {
             return state.data
+        },
+        registrationStatus(state) {
+            return state.status
         }
     }
 }
