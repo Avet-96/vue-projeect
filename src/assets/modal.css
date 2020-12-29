@@ -1,0 +1,217 @@
+.modal_block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 123;
+    background: rgba(145, 145, 145, 0.9);
+}
+
+.a {
+    color: white;
+}
+
+
+.modal-content {
+    background: #3a3a3a;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 0;
+    text-align: left;
+}
+
+.modal-header {
+    padding: 25px 25px 15px 25px;
+    background: #333;
+    border: 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    color: #888;
+}
+
+.modal-header .close {
+    font-size: 36px;
+    color: #eee;
+    font-weight: 300;
+    text-shadow: none;
+    opacity: 1;
+}
+
+.modal-title {
+    margin-bottom: 10px;
+    line-height: 30px;
+    color: #eee;
+}
+
+.modal-body {
+    padding: 25px 25px 30px 25px;
+    background: #3a3a3a;
+    text-align: left;
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.modal-body img {
+    margin-bottom: 15px;
+}
+
+.modal-body form textarea {
+    height: 100px;
+}
+
+.modal-body form .input-error {
+    border-color: #fd625e;
+}
+
+
+/***** Media queries *****/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+
+    .top-content .top-big-link {
+        margin-top: 25px;
+    }
+
+    .top-content .top-big-link a.btn {
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 415px) {
+
+    h1, h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* Retina-ize images/icons */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
+
+
+}
+
+.ainput[type="text"],
+.atextarea.form-control {
+    height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #ffffff;
+    border: 1px solid #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #888;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.atextarea.form-control {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 30px;
+}
+
+.ainput[type="text"]:focus,
+.atextarea:focus,
+.atextarea.form-control:focus {
+    outline: 0;
+    background: #fff9f9;
+    border: 3px solid #555;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.ainput[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-control:-moz-placeholder {
+    color: #888;
+}
+
+.ainput[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder {
+    color: #888;
+}
+
+.ainput[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder {
+    color: #888;
+}
+
+.margin_d {
+    margin-left: 20% !important;
+}
+
+.abutton.btn {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #fd625e;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.abutton.btn:hover {
+    opacity: 0.6;
+    color: #fff;
+}
+
+.abutton.btn:active {
+    outline: 0;
+    opacity: 0.6;
+    color: #fff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.abutton.btn:focus {
+    outline: 0;
+    opacity: 0.6;
+    background: #fd625e;
+    color: #fff;
+}
+
+.abutton.btn:active:focus, button.btn.active:focus {
+    outline: 0;
+    opacity: 0.6;
+    background: #fd625e;
+    color: #fff;
+}

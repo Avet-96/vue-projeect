@@ -42,7 +42,6 @@ export default {
         }
         await this.$store.dispatch('userLogin', userData)
         await this.$store.dispatch('getUserData')
-        console.log(this.$store.getters.useData.data)
         if (localStorage.getItem('token') === this.$store.getters.useData.user.token) {
           await this.$router.push('/')
         }

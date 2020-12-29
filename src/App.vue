@@ -15,9 +15,9 @@ export default {
       return (this.$route.meta.layout || 'empty') + '-layout'
     }
   },
-  mounted() {
+  async mounted() {
     if (!localStorage.getItem('token')) {
-      this.$router.push('/login')
+      await this.$router.push('/login')
     }
   },
   components: {

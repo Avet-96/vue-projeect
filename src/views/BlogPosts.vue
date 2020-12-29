@@ -112,7 +112,11 @@
 
 <script>
 export default {
-  name: "BlogPosts"
+  name: "BlogPosts",
+  mounted() {
+  },
+
+
 }
 </script>
 

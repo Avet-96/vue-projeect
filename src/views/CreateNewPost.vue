@@ -28,22 +28,23 @@
 <script>
 export default {
   name: "CreateNewPost",
+  props: ['updateData'],
+
   data: () => ({
     title: '',
-    description: ''
+    description: '',
   }),
   methods: {
     async handleSubmit() {
       try {
-        if (this.title !== '' && this.description !== '') {
+        if (this.title !== '' && this.description !== ''){
           let data = {title: this.title, description: this.description}
           await this.$store.dispatch('createPost', data)
           this.title = ''
           this.description = ''
+          this.updateData()
         }
-
-      } catch (e) {
-      }
+      }catch (e) {}
     }
   }
 }
